@@ -7,7 +7,7 @@ This is a ready-to-go TileMill project to get you started using PostGIS with Til
 - OSM data imported into the database using osm2pgsql (version 0.69)
 - TileMill installed
 
-This project is based on the OSM Bright project, but with fixes to make it work correctly with Winows.  The SQL queries contained are suited for the database structure prepared by the current version of osm2pgsql for Windows (0.69).
+This project is based on the OSM Bright project, but with fixes to make it work correctly with Windows.  The SQL queries contained are suited for the database structure prepared by the current version of osm2pgsql for Windows (0.69).
 
 To get started, copy this directory into your TileMill projects folder.  This is most probably *~/Documents/MapBox/projects*.
 
