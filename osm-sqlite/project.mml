@@ -1,0 +1,498 @@
+{
+  "bounds": [
+    88.407,
+    -13.0768,
+    128.8367,
+    12.4178
+  ],
+  "center": [
+    106.6003,
+    -6.1051,
+    5
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 5,
+  "maxzoom": 19,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "palette.mss",
+    "base.mss",
+    "roads.mss",
+    "labels.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.99978348919961,
+        -85.051,
+        180,
+        83.63381093402975
+      ],
+      "id": "countries",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip"
+      },
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "countries"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, way_area AS area, COALESCE(landuse, leisure, \"natural\", amenity, tourism) AS type\n  FROM planet_osm_polygon\n  WHERE way_area > 100000\n  ORDER BY way_area DESC\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "landuse_gen0",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "landuse_gen0"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, way_area AS area, COALESCE(landuse, leisure, \"natural\", amenity, tourism) AS type\n  FROM planet_osm_polygon\n  WHERE way_area > 10000\n  ORDER BY way_area DESC\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "landuse_gen1",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "landuse_gen1"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, way_area AS area, COALESCE(landuse, leisure, \"natural\", amenity, tourism) AS type\n  FROM planet_osm_polygon\n  ORDER BY way_area DESC\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "landuse",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "landuse"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, \"natural\" AS type, way_area AS area\n  FROM planet_osm_polygon\n  WHERE (\"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream'))\n    AND way_area > 10000\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "water_gen0",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "water_gen0"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, \"natural\" AS type, way_area AS area\n  FROM planet_osm_polygon\n  WHERE (\"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream'))\n    AND way_area > 1000\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "water_gen1",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "water_gen1"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, way_area AS area\n  FROM planet_osm_polygon\n  WHERE \"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream')\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "water",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "water"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, way_area AS area, leisure AS type\n  FROM planet_osm_polygon\n  WHERE leisure = 'nature_reserve'\n  ORDER BY way_area DESC\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "landuse_overlays",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "landuse_overlays"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, admin_level\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n    AND admin_level IN ('2','3','4')\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "admin",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "admin"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        106.4488160658746,
+        -6.529697544933872,
+        107.1974720236598,
+        -5.983841099903443
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, \"building\" AS type\n  FROM planet_osm_polygon\n  WHERE building NOT IN ('0','false', 'no')\n  ORDER BY way_area DESC\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "buildings"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, COALESCE(highway, railway) AS type, 0 AS bridge, access, render, layer, 1 as tunnel,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '2_line' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '3_inline' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n  ) AS tunnels\n  ORDER BY layer ASC, render ASC\n) AS data",
+        "attachdb": "",
+        "extent": "",
+        "id": "tunnel",
+        "project": "osm-sqlite",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "tunnel",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "tunnel"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        106.44972336431157,
+        -6.529443743607374,
+        107.20376023064864,
+        -5.99449727095932
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY\n  FROM planet_osm_point \n  WHERE highway = 'turning_circle'\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "turning_circle_case",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "turning_circle_case"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, COALESCE(highway, railway) AS type, 0 AS tunnel, 0 AS bridge, access, 'fill' AS render,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM planet_osm_line\n  WHERE (highway IS NOT NULL OR railway IS NOT NULL)\n    AND (tunnel IS NULL OR tunnel = 'no')\n    AND (bridge IS NULL OR bridge = 'no')\n  ORDER BY z_order\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "roads_high",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "roads_high"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44895081316722,
+        -6.529699776153755,
+        107.20337395507647,
+        -6.019328847993404
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, highway AS type\n  FROM planet_osm_roads\n  WHERE highway IN ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link')\n) AS data",
+        "attachdb": "",
+        "extent": "",
+        "id": "roads_med",
+        "project": "osm-sqlite",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "roads_med",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "roads_med"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44895081316722,
+        -6.529699776153755,
+        107.20337395507647,
+        -6.019328847993404
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, highway AS type\n    FROM planet_osm_roads\n    WHERE highway IN ('motorway', 'trunk')\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "roads_low",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "roads_low"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        106.44972336431157,
+        -6.529443743607374,
+        107.20376023064864,
+        -5.99449727095932
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY\n  FROM planet_osm_point\n  WHERE highway = 'turning_circle'\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "turning_circle_fill",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "turning_circle_fill"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, COALESCE(highway, railway) AS type, 1 AS bridge, access, render, layer, 0 as tunnel,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '2_line' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '3_inline' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n  ) AS bridges\n  ORDER BY layer ASC, render ASC\n) AS data",
+        "attachdb": "",
+        "extent": "",
+        "id": "bridge",
+        "project": "osm-sqlite",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "bridge",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "bridge"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        106.44972336431157,
+        -6.529443743607374,
+        107.20376023064864,
+        -5.99449727095932
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, place AS type, name, z_order, population\n  FROM planet_osm_point\n  WHERE place in ('country', 'state', 'city', 'town', 'village', 'hamlet', 'suburb', 'neighbourhood', 'locality')\n  ORDER BY population DESC\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "place",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "place"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, highway AS type, name, ref, oneway, LENGTH(ref) AS reflen\n    FROM planet_osm_line\n    WHERE highway IN ('motorway', 'trunk')\n      AND (name IS NOT NULL OR ref IS NOT NULL)\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "motorway_label",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "motorway_label"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, highway AS type, name, oneway\n  FROM planet_osm_line\n  WHERE (name IS NOT NULL OR oneway IN ('yes', 'true', '1', '-1'))\n    AND highway IN ('primary', 'secondary', 'tertiary')\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "mainroad_label",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "mainroad_label"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        106.44879809956892,
+        -6.529699776153755,
+        107.20337395507647,
+        -5.9837556665456235
+      ],
+      "Datasource": {
+        "type": "sqlite",
+        "file": "layers\\extract.sqlite",
+        "table": "( SELECT OGC_FID, GEOMETRY, highway AS type, name, oneway\n  FROM planet_osm_line\n  WHERE (name IS NOT NULL OR oneway IN ('yes', 'true', '1', '-1'))\n    AND highway IN ('residential', 'unclassified', 'road', 'living_street', 'unknown')\n) AS data",
+        "attachdb": "",
+        "extent": ""
+      },
+      "id": "minorroad_label",
+      "class": "",
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "minorroad_label"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "OSM SQLite",
+  "description": "",
+  "attribution": ""
+}
