@@ -1,0 +1,728 @@
+{
+  "bounds": [
+    91.8457,
+    -11.6092,
+    128.584,
+    7.3189
+  ],
+  "center": [
+    106.7651,
+    -6.2716,
+    6
+  ],
+  "format": "png",
+  "interactivity": false,
+  "minzoom": 6,
+  "maxzoom": 19,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "palette.mss",
+    "base.mss",
+    "roads.mss",
+    "labels.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -179.99978348919961,
+        -85.051,
+        180,
+        83.63381093402975
+      ],
+      "id": "countries",
+      "class": "",
+      "Datasource": {
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip"
+      },
+      "srs-name": "900913",
+      "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+      "advanced": {},
+      "name": "countries"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, way_area AS area, COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type\n  FROM planet_osm_polygon\n  WHERE way_area > 100000\n  ORDER BY way_area DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass",
+        "id": "landuse_gen0",
+        "project": "osm-windows-tiles",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "landuse_gen0",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "landuse_gen0"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, way_area AS area, COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type\n  FROM planet_osm_polygon\n  WHERE way_area > 10000\n  ORDER BY way_area DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass",
+        "id": "landuse_gen1",
+        "project": "osm-windows-tiles",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "landuse_gen1",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "landuse_gen1"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, way_area AS area, COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type\n  FROM planet_osm_polygon\n  ORDER BY way_area DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass",
+        "id": "landuse",
+        "project": "osm-windows-tiles",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "landuse",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "landuse"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, waterway AS type\n  FROM planet_osm_line\n  WHERE waterway IN ('river', 'canal')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "waterway_low",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "waterway_low"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, waterway AS type\n  FROM planet_osm_line\n  WHERE waterway IN ('river', 'canal', 'stream')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "waterway_med",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "waterway_med"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, waterway AS type\n  FROM planet_osm_line\n  WHERE waterway IN ('river', 'canal', 'stream', 'ditch', 'drain')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "waterway_high",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "waterway_high"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, \"natural\" AS type, way_area AS area\n  FROM planet_osm_polygon\n  WHERE (\"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream'))\n    AND way_area > 10000\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "water_gen0",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "water_gen0"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, \"natural\" AS type, way_area AS area\n  FROM planet_osm_polygon\n  WHERE (\"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream'))\n    AND way_area > 1000\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "water_gen1",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "water_gen1"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, way_area AS area\n  FROM planet_osm_polygon\n  WHERE \"natural\" IN ('water', 'pond')\n    OR waterway IN ('basin', 'canal', 'mill_pond', 'pond', 'riverbank', 'stream')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "water",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "water"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, way_area AS area, COALESCE(leisure) AS type\n  FROM planet_osm_polygon\n  WHERE leisure = 'nature_reserve'\n  ORDER BY way_area DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "landuse_overlays",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "landuse_overlays"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, admin_level\n  FROM planet_osm_line\n  WHERE boundary = 'administrative'\n    AND admin_level IN ('2','3','4')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "admin",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "admin"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, \"building\" AS type\n  FROM planet_osm_polygon\n  WHERE building NOT IN ('0','false', 'no')\n  ORDER BY ST_YMin(ST_Envelope(way)) DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "way",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass",
+        "id": "osm-buildings",
+        "project": "osm-windows-tiles",
+        "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "buildings"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, aeroway AS type\n  FROM planet_osm_line\n  WHERE aeroway IN ('apron', 'runway', 'taxiway')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "aeroway",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "aeroway"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, COALESCE(highway, railway) AS type, 0 AS bridge, access, render, layer, 1 as tunnel,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '2_line' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '3_inline' AS render FROM planet_osm_line\n    WHERE tunnel NOT IN ('', '0', 'no')\n  ) AS tunnels\n  ORDER BY layer ASC, render ASC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "tunnel",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "tunnel"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        94.97027800000001,
+        -11,
+        141.0085899,
+        6.075278
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way \n  FROM planet_osm_point \n  WHERE highway = 'turning_circle'\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "94.970278,-11,141.0085899,6.075278",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "turning_circle_case",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "turning_circle_case"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, COALESCE(highway, railway) AS type, 0 AS tunnel, 0 AS bridge, access, 'fill' AS render,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM planet_osm_line\n  WHERE (highway IS NOT NULL OR railway IS NOT NULL)\n    AND (tunnel IS NULL OR tunnel = 'no')\n    AND (bridge IS NULL OR bridge = 'no')\n  ORDER BY z_order\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "roads_high",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "roads_high"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        93.8479372,
+        -12.2304942,
+        142.1774291,
+        6.7762504
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, highway AS type\n  FROM planet_osm_roads\n  WHERE highway IN ('motorway', 'trunk', 'primary', 'secondary', 'motorway_link', 'trunk_link')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "93.8479372,-12.2304942,142.1774291,6.7762504",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "roads_med",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "roads_med"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        93.8479372,
+        -12.2304942,
+        142.1774291,
+        6.7762504
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, highway AS type, bridge, tunnel\n    FROM planet_osm_roads\n    WHERE highway IN ('motorway', 'trunk')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "93.8479372,-12.2304942,142.1774291,6.7762504",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "roads_low",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "roads_low"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        94.97027800000001,
+        -11,
+        141.0085899,
+        6.075278
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way \n  FROM planet_osm_point\n  WHERE highway = 'turning_circle'\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "94.970278,-11,141.0085899,6.075278",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "turning_circle_fill",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "turning_circle_fill"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, COALESCE(highway, railway) AS type, 1 AS bridge, access, render, layer, 0 as tunnel,\n  CASE\n    WHEN highway IN ('motorway', 'trunk') THEN 'motorway'\n    WHEN highway IN ('primary', 'secondary') THEN 'mainroad'\n    WHEN highway IN ('motorway_link', 'trunk_link', 'primary_link', 'secondary_link', 'tertiary', 'tertiary_link', 'residential', 'unclassified', 'road', 'living_street') THEN 'minorroad'\n    WHEN highway IN ('service', 'track') THEN 'service'\n    WHEN highway IN ('path', 'cycleway', 'footway', 'pedestrian', 'steps', 'bridleway') THEN 'noauto'\n    WHEN railway IN ('light_rail', 'subway', 'narrow_gauge', 'rail', 'tram') THEN 'railway'\n    ELSE 'other' END AS stylegroup\n  FROM (\n    SELECT *, '1_outline' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '2_line' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n    UNION ALL\n    SELECT *, '3_inline' AS render FROM planet_osm_line\n    WHERE bridge NOT IN ('', '0', 'no')\n  ) AS bridges\n  ORDER BY layer ASC, render ASC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "bridge",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "bridge"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        94.97027800000001,
+        -11,
+        141.0085899,
+        6.075278
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, place AS type, name, z_order\n  FROM planet_osm_point\n  WHERE place in ('country', 'state', 'city', 'town', 'village', 'hamlet', 'suburb', 'neighbourhood', 'locality')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "94.970278,-11,141.0085899,6.075278",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "place",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "place"
+    },
+    {
+      "extent": [
+        95.0129527,
+        -11.0082368,
+        141.1210783,
+        5.9072348
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT COALESCE(landuse, leisure, \"natural\", highway, amenity, tourism) AS type,\n    name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND way && !bbox!\n    AND ST_IsValid(way)\n\n  UNION ALL\n\n  SELECT 'building' AS type, name, way_area AS area,\n    ST_PointOnSurface(way) AS way\n  FROM planet_osm_polygon\n  WHERE name IS NOT NULL\n    AND building NOT IN ('', 'no', '0', 'false')\n    AND way && !bbox!\n    AND ST_IsValid(way)\n  ORDER BY area DESC\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "95.0129527,-11.0082368,141.1210783,5.9072348",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "area_label",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "area_label"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, highway AS type, name, ref, oneway, CHAR_LENGTH(ref) AS reflen\n    FROM planet_osm_line\n    WHERE highway IN ('motorway', 'trunk')\n      AND (name IS NOT NULL OR ref IS NOT NULL)\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "motorway_label",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "motorway_label"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, highway AS type, name, oneway\n  FROM planet_osm_line\n  WHERE (name IS NOT NULL OR oneway IN ('yes', 'true', '1', '-1'))\n    AND highway IN ('primary', 'secondary', 'tertiary')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "mainroad_label",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "mainroad_label"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, highway AS type, name, oneway\n  FROM planet_osm_line\n  WHERE (name IS NOT NULL OR oneway IN ('yes', 'true', '1', '-1'))\n    AND highway IN ('residential', 'unclassified', 'road', 'living_street', 'unknown')\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "minorroad_label",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "minorroad_label"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        80.27662170000002,
+        -12.2304942,
+        142.1774291,
+        13.0219625
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "( SELECT way, waterway AS type, name\n  FROM planet_osm_line\n  WHERE waterway IN ('canal', 'river', 'stream') \n    AND name IS NOT NULL\n) AS data",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "80.2766217,-12.2304942,142.1774291,13.0219625",
+        "dbname": "gisdb",
+        "user": "postgres",
+        "password": "pg_pass"
+      },
+      "id": "waterway_label",
+      "class": "",
+      "srs-name": "WGS84",
+      "srs": "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
+      "advanced": {},
+      "name": "waterway_label"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "OSM PostGIS",
+  "description": "",
+  "attribution": ""
+}
