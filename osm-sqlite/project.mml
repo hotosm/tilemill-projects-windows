@@ -11,7 +11,10 @@
     5
   ],
   "format": "png",
-  "interactivity": false,
+  "interactivity": {
+    "layer": "countries",
+    "template_teaser": "<b>{{{SOVEREIGNT}}}</b><br/>\n<i>Type:</i> {{{TYPE}}}<br/>\n<i>Postal:</i> {{{POSTAL}}}<br/><br/>\n\"{{{NAME_FORMA}}}\""
+  },
   "minzoom": 5,
   "maxzoom": 19,
   "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -33,7 +36,10 @@
       "id": "countries",
       "class": "",
       "Datasource": {
-        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip"
+        "file": "http://mapbox-geodata.s3.amazonaws.com/natural-earth-1.4.0/cultural/10m-admin-0-countries.zip",
+        "id": "countries",
+        "project": "osm-sqlite",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
       },
       "srs-name": "900913",
       "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
@@ -494,5 +500,6 @@
   "metatile": 2,
   "name": "OSM SQLite",
   "description": "",
-  "attribution": ""
+  "attribution": "",
+  "legend": "<table border=\"1\">\n<tr>\n  <td><span style='color:#ff6060'>━</span> Roads</td>\n  <td><img src=\"http://s20.postimage.org/9yhac0d3d/railway.png\" width=\"15\" height=\"3\"></img>   Railway</td>\n</tr>\n\n<tr>\n  <td><span style='color:#f1a4a4'>▉</span> Building</td>\n  <td><span style='color:#fce96e'>▉</span> Residential Area</td>\n</tr>\n\n<tr>\n  <td><span style='color:#f4e4da'>▉</span> Commercial Area</td>\n  <td><span style='color:#6fff6f'>▉</span> Garden</td>\n</tr>\n\n<tr>\n  <td><span style='color:#9ee270'>▉</span> Farmyard </td>\n  <td><span style='color:#34c2d7'>▉</span> Water</td>\n</tr>\n\n<tr>\n  <td><img src=\"http://img543.imageshack.us/img543/1378/hospitalv.png\" ></img> Hospital</td>\n  <td><img src=\"http://s20.postimage.org/mtkol12yx/police.png\"></img> Police Station</td>\n</tr>\n\n<tr>\n  <td><img src=\"http://s20.postimage.org/scimoiamh/mosque.png\"></img> Mosque</td>\n  <td><img src=\"http://s20.postimage.org/9a7z9oxft/religious_christian_18.png\"></img> Church</td>\n</tr>\n\n<tr>\n  <td><img src=\"http://s20.postimage.org/8cxf6gdhl/school.png\"></img> School</td>\n  <td><img src=\"http://s20.postimage.org/m9124lkcp/kindergarten.png\"></img> Kindergarten</td> \n</tr>\n\n<tr>\n  <td><img src=\"http://s20.postimage.org/nzjmmpky1/post_18.png\"></img> Post Office </td>\n  <td><img src=\"http://s20.postimage.org/ua6gk5snd/lodging_18.png\"></img> Hotel</td>\n</tr>\n\n<tr>\n  <td><img src=\"http://s20.postimage.org/qbw7y1mx5/rail_18.png\"></img> Bus Station</td>\n  <td><img src=\"http://s20.postimage.org/jralpcyfd/bank_18.png\"></img> Bank</td>\n</tr>\n\n<tr>\n  <td><img src=\"http://s20.postimage.org/n1hi90sp5/restaurant_18.png\"></img> Restaurant</td></tr>\n \n</table>"
 }
